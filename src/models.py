@@ -15,6 +15,7 @@ class User(Base):
     date_of_birth = Column(String(11), nullable=False)
     password = Column(String(20), nullable=False)
     email = Column(String (100), nullable=False)
+    #likes = Column()
 
 class Comment(Base):
     __tablename__ = 'comment'
@@ -44,9 +45,14 @@ class Media(Base):
 class Follower(Base):
     __tablename__ = "follower"
 
-    from_user_id = Column(Integer, ForeignKey("user.id"))
+    from_user_id = Column(Integer, ForeignKey("user.id"), primary_key=True)
     to_user_id = Column(Integer, ForeignKey("user.id"))
  
+#class Like(Base):
+#   __tablename__ = "like"
+
+#    like_id = Column(Integer, ForeignKey("user.id"), primary_key=True)
+
     def to_dict(self):
         return {}
 
