@@ -13,6 +13,7 @@ class User(Base):
     id = Column(Integer, primary_key=True)
     full_name = Column(String(150), nullable=False)
     date_of_birth = Column(String(11), nullable=False)
+    username = Column(String (20), nullable=False)
     password = Column(String(20), nullable=False)
     email = Column(String (100), nullable=False)
     #likes = Column()
